@@ -79,15 +79,7 @@ const App = () => {
           {!walletAddress && renderNotConnectedContainer()}
         </div>
         {walletAddress && <CandyMachine walletAddress={window.solana} />}
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
-        </div>
+       
       </div>
     </div>
   );
