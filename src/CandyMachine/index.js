@@ -127,6 +127,8 @@ const CandyMachine = ({ walletAddress }) => {
     )[0];
   };
 
+
+
   const createAssociatedTokenAccountInstruction = (
     associatedTokenAddress,
     payer,
@@ -159,7 +161,7 @@ const CandyMachine = ({ walletAddress }) => {
 
   const mintToken = async () => {
     const mint = web3.Keypair.generate();
-
+    const [candyMachine, setCandyMachine] = useState(null);
     const userTokenAccountAddress = (
       await getAtaForMint(mint.publicKey, walletAddress.publicKey)
     )[0];
