@@ -21,6 +21,7 @@ const opts = {
 
 const CandyMachine = ({ walletAddress }) => {
 
+  const [candyMachine, setCandyMachine] = useState(null);
   const getProvider = () => {
     const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST;
     
@@ -128,7 +129,6 @@ const CandyMachine = ({ walletAddress }) => {
   };
 
 
-
   const createAssociatedTokenAccountInstruction = (
     associatedTokenAddress,
     payer,
@@ -161,7 +161,6 @@ const CandyMachine = ({ walletAddress }) => {
 
   const mintToken = async () => {
     const mint = web3.Keypair.generate();
-    const [candyMachine, setCandyMachine] = useState(null);
     const userTokenAccountAddress = (
       await getAtaForMint(mint.publicKey, walletAddress.publicKey)
     )[0];
